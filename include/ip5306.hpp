@@ -1,7 +1,7 @@
 #pragma once
 #include <Arduino.h>
 #include <Wire.h>
-namespace arduino {
+
 enum struct ip5306_shutdown {
     after_8s=0,
     after_32s=1,
@@ -105,4 +105,3 @@ public:
     float charge_level() const;
     
 };
-}
