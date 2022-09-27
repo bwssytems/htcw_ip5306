@@ -1,5 +1,5 @@
 #include <ip5306.hpp>
-namespace arduino {
+
 // based on
 // https://gist.github.com/me-no-dev/7702f08dd578de5efa47caf322250b57
 
@@ -245,6 +245,4 @@ ip5306_load ip5306::output_load() const {
 float ip5306::charge_level() const {
     // LED[0-4] State (inverted)
     return IP5306_LEDS2PCT(((~ip5306_get_bits(m_i2c,IP5306_REG_READ_4, 4, 4)) & 0x0F))/100.0;
-}
-
 }
